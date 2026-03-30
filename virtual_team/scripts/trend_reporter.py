@@ -37,7 +37,7 @@ def generate_ai_insight(news_items):
 4. この出力はそのままHTMLメールの一部として埋め込まれます。Markdown形式（**や##など）は一切使わず、必ずHTMLタグ（<h3>, <h4>, <p>, <ul>, <li>, <strong>等）のみを使用して構造化してください。<html>, <body>タグは含めないでください。
 """
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-pro')
         response = model.generate_content(prompt)
         html_output = response.text.strip()
         # Markdownブロック指定（```html など）が含まれてしまう場合の除去
